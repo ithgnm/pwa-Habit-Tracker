@@ -8,7 +8,7 @@ const port = process.env.PORT || 7000
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb://git'
+const uri = 'mongodb://'
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 
 const connection = mongoose.connection
