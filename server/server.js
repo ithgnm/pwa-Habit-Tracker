@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 7000
+const port = process.env.PORT
 
 app.use(cors());
 app.use(express.json());
@@ -18,9 +18,7 @@ connection.once('open', () =>
     console.log('MongoDB connection established successfully!')
 )
 
-const userRouter = require('./routes/users');
-
-app.use('/users', userRouter);
+app.use('/users', require('./src/routes/users'))
 
 app.listen(port, () => 
     console.log('Server is running, port:', port)
