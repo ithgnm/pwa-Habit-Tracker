@@ -1,14 +1,16 @@
 import React from 'react'
+import { withTranslate } from 'react-redux-multilingual'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Navbar from './components/navbar.component'
 import Login from './components/login.component';
 
-function App() {
+function App({ translate }) {
 
   return (
 
     <div>
+
       <Router>
 
         <Login />
@@ -23,4 +25,4 @@ function App() {
   );
 }
 
-export default App
+export default withTranslate(App)
